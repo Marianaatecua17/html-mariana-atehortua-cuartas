@@ -70,5 +70,16 @@ document.addEventListener("DOMContentLoaded" , () => {
                                      // cuadricula de html para que se imprima la carta creada en el div de html.
     }
   }
-});
+
+
+function voltearCarta() {
+  var cardId = this.getAttribute("data-id");
+  cartasEscogidas.push(cardAdj[cardId].name);
+  cartasEscogidasId.push(cardId);
+  this.setAttribute("src", cardAdj[cardId].img);
+  if (cartasEscogidas.length === 2) {
+    setTimeout(verificarPareja, 1000);
+  }
+}
+crearTablero(); 
 });
